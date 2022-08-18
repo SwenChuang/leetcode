@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    I can be placed before V (5) and X (10) to make 4 and 9. 
+    X can be placed before L (50) and C (100) to make 40 and 90. 
+    C can be placed before D (500) and M (1000) to make 400 and 900.
+
+    Symbol Value
+    I 1
+    V 5
+    X 10
+    L 50
+    C 100
+    D 500
+    M 1000
+
+    <script>
+
+        let s = "MCMXCIV";
+        let ans = 0;
+        let sArray = s.split('');
+        var Roman={
+            "I" : 1,
+            "V" : 5,
+            "X" : 10,
+            "L" : 50,
+            "C" : 100,
+            "D" : 500,
+            "M" : 1000
+
+        };  
+
+        console.log(Roman.L)
+        var romanToInt = function (s) {
+            for(let i = 0; i< sArray.length; i++ ){
+                if(i+1 < sArray.length && Roman[sArray[i]] < Roman[sArray[i+1]]){
+                    ans -= Roman[sArray[i]];
+                }
+                else{
+                    ans += Roman[sArray[i]];
+                }
+            }
+            return ans
+        };
+ 
+        console.log(romanToInt()) 
+
+
+
+
+    </script>
+</body>
+
+</html>
