@@ -33,9 +33,9 @@ var addBinary = function (a, b) {
     let carry = false;
     let res = '';
 
-    if (a == 0 && b == 0) {
-        return '0';
-    }
+    // if (a == 0 && b == 0) {
+    //     return '0';
+    // }
 
     while (aArr.length || bArr.length) {
 
@@ -68,7 +68,7 @@ var addBinary = function (a, b) {
         }
     }
 
-    if (res[0] == 0 || carry == true) {
+    if (carry == true) {
         res = '1'.concat(res);
     }
 
@@ -80,6 +80,7 @@ var addBinary = function (a, b) {
 console.log(addBinary(a = "11", b = "1"))
 console.log(addBinary(a = "1010", b = "1011"))
 console.log(addBinary(a = "1111", b = "1111"))
+console.log(addBinary(a = "0", b = "0"))
 
 
 
